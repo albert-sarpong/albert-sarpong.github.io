@@ -374,10 +374,20 @@ footer{text-align:center;padding:40px;font-family:'JetBrains Mono',monospace;
     </div>
   </section>
 
+  <!-- EDUCATION -->
+  <section id="education">
+    <div style="width:100%">
+      <div class="eyebrow">Brief // 05 — Education</div>
+      <h2 style="font-size:clamp(28px,4.4vw,52px);margin-bottom:8px">Academic background</h2>
+      <p class="lead">Formally grounded in computing, security, and systems.</p>
+      <div class="grid" id="edugrid"></div>
+    </div>
+  </section>
+
   <!-- CREDENTIALS -->
   <section id="creds">
     <div style="width:100%">
-      <div class="eyebrow">Brief // 05 — Credentials</div>
+      <div class="eyebrow">Brief // 06 — Credentials</div>
       <h2 style="font-size:clamp(28px,4.4vw,52px);margin-bottom:8px">Certification stack</h2>
       <p class="lead">Governance-first, operations-deep.</p>
       <div class="grid" id="certgrid"></div>
@@ -405,6 +415,21 @@ footer{text-align:center;padding:40px;font-family:'JetBrains Mono',monospace;
 <script>
 const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ===== EDUCATION ===== */
+const edu=[
+ ['MSc. Digital Forensics & Cybersecurity','Postgraduate',1],
+ ['BSc. Computer Science','Undergraduate',1],
+ ['Professional Advanced Diploma','Systems Engineering',0],
+ ['Professional Diploma','Software Engineering',0],
+];
+const eg=document.getElementById('edugrid');
+edu.forEach(([c,d,f])=>{
+ const el=document.createElement('div');
+ el.className='cert'+(f?' flag':'');
+ el.innerHTML=`<div class="c">${c}</div><div class="d">${d}</div>`;
+ eg.appendChild(el);
+});
 
 /* ===== CERT WALL ===== */
 const certs=[
